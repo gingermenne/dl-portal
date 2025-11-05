@@ -53,6 +53,11 @@ PAGE = """
           <button class="btn secondary" name="action" value="beep" type="submit">🔊 Test Beep</button>
         </div>
       </form>
+      
+      <form method="post" action="/send">
+        <input type="hidden" name="action" value="lock">
+        <button class="btn danger" type="submit">Lock</button>
+      </form>
 
       <p class="muted" style="margin-top:16px;">
         Each action is signed with an HMAC and sent to your Pi at:<br>
