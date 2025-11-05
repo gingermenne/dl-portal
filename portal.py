@@ -74,6 +74,12 @@ def home():
     return render_template_string(PAGE, pi_url=PI_UNLOCK_URL)
 from flask import redirect, url_for
 
+@app.get("/")
+def index():
+    # show your login form or main portal page
+    from flask import render_template_string, session
+    return render_template_string(PAGE, authed=session.get("ok") is True)
+
 @app.get("/login")
 def login_get():
     # If someone browses to /login with GET (refresh/back button),
